@@ -6,6 +6,31 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9               */
 
+double[,] GetArray(int m, int n)  //заполняет двумерный массив случайными вещественными числами
+{
+    double[,] res = new double[m, n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            res[i, j] = new Random().Next(-50, 51) / 2.5;
+        }
+    }
+    return res;
+}
 
+void PrintArray(double[,] array)  //выводит в консоль двумерный массив
+{
+    Console.WriteLine($"m = {array.GetLength(0)}, n = {array.GetLength(1)}.");
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+}
 
-
+double[,] res = GetArray(3, 4);
+PrintArray(res);

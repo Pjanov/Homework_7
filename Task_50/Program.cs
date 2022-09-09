@@ -8,5 +8,45 @@
 8 4 2 4
 17 -> такого числа в массиве нет            */
 
+// Условие задачи не понял !
+//  1. Принимает позиции элемента в двумерном массиве - ДА.
+//  2. Выводит значение этого элемента - ДА.
+//  3. Такого элемента нет - Индекс находился за пределами массива.
+//  4. 17 -> такого числа в массиве нет - ПРИ ЧЕМ ТУТ ЧИСЛО ? если искать надо по позиции элемента!
+//  Короче мозги сломал ))) 
 
 
+int[,] GetArray(int m, int n, int minValue, int maxValue) // заполняет двумерный массив случайными числами от 1 до 9
+{
+    int[,] res = new int[m, n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            res[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return res;
+}
+
+void PrintArray(int[,] array) // выводит в консоль двумерный массив
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void ElementValue(int[,] array, int m, int n)// показывает значение указанного элемента в массиве
+{
+    int value = array[m-1, n-1];
+    Console.WriteLine($"Значение элемента строка: {m}, столбец: {n} -> {value}");
+}
+
+int[,] array = GetArray(3, 4, 1, 9);
+PrintArray(array);
+ElementValue(array, 3, 4);
