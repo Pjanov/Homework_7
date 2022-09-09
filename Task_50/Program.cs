@@ -50,3 +50,4 @@ void ElementValue(int[,] array, int m, int n)// показывает значе�
 int[,] array = GetArray(3, 4, 1, 9);
 PrintArray(array);
 ElementValue(array, 3, 4);
+
