@@ -52,3 +52,4 @@ void AverageValue(int[,] array) // cреднее арифметическое к
 int[,] array = GetArray(3, 5);
 PrintArray(array);
 AverageValue(array);
+
